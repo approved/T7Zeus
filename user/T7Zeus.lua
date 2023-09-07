@@ -1,7 +1,7 @@
 local package = require("package")
 
 Zeus = {
-    dll_name = "T7Zeus.dll",
+    dll_name = "t7-Zeus.dll",
     dll_path = "./" .. dll_name,
 }
 
@@ -12,7 +12,7 @@ function Zeus:new()
         Zeus.init_zeus = package.loadlib(dll_path, "init")
 
         if not Zeus.init_zeus then
-            Engine.ComError(Enum.errorCode.ERROR_UI, "Failed to find T7Zeus.dll")
+            Engine.ComError(Enum.errorCode.ERROR_UI, "Failed to find " .. dll_name)
             return nil
         end
     end
