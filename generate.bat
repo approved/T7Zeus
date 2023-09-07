@@ -1,0 +1,3 @@
+@echo off
+echo Generating Project...
+"./premake/premake5.exe" vs2022
