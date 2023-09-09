@@ -12,5 +12,5 @@ local relative_path = "./"
 zeus.dll_path = (relative_path .. zeus.dll_name)
 zeus.init()
 
-Enable the paralyzer patch
+-- Enable the paralyzer patch
 zeus.set_paralyzer_patch_enabled()
