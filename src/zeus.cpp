@@ -8,7 +8,7 @@ namespace zeus {
 
 	bool IsIntialized() { return Initialized; }
 
-	bool SetParalyzerPatchEnabled(void* L, bool state) {
+	bool SetParalyzerPatchEnabled(void* L) {
 		DoParalyzerPatch = true;
 		return DoParalyzerPatch;
 	}

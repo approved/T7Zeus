@@ -5,5 +5,7 @@ namespace zeus {
 	extern bool DoParalyzerPatch;
 	
 	bool IsIntialized();
-	bool __declspec(dllexport) SetParalyzerPatchEnabled(void* L, bool state);
+	extern "C" {
+		bool __declspec(dllexport) SetParalyzerPatchEnabled(void* L);
+	}
 }
