@@ -8,7 +8,8 @@ if not zeus then
     return
 end
 
-zeus.dll_path = ("./usermaps/zm_test/" .. zeus.dll_name)
+local relative_path = "./"
+zeus.dll_path = (relative_path .. zeus.dll_name)
 zeus.init()
 
 Enable the paralyzer patch
