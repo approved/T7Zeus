@@ -4,7 +4,7 @@
 #include "zeus/exception_handler.hpp"
 #include "zeus/script.hpp"
 
-BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
+BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fwdReason, LPVOID lpReserved)
 {
 	return TRUE;
 }
