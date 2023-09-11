@@ -4,15 +4,15 @@
 
 namespace zeus {
 	CommonFunctions* Script::GetCommonFunctions() {
-		return ((CommonFunctions*)(game::ModuleBase + 0x33477A0));
+		return ((CommonFunctions*)(Game::ModuleBase + 0x33477A0));
 	}
 
 	char* Script::Scr_GetString(scriptInstance_t inst, unsigned int index) {
-		return ((tScr_GetString)(game::ModuleBase + 0x12EBAA0))(inst, index);
+		return ((tScr_GetString)(Game::ModuleBase + 0x12EBAA0))(inst, index);
 	}
 
 	void Script::Cbuf_AddText(LocalClientNum_t localClientNum, const char* text) {
-		((tCbuf_AddText)(game::ModuleBase + 0x20EC8B0))(localClientNum, text);
+		((tCbuf_AddText)(Game::ModuleBase + 0x20EC8B0))(localClientNum, text);
 	}
 
 	void Script::GScr_AddDebugCommand(scriptInstance_t inst)

@@ -325,7 +325,7 @@ namespace zeus {
 			InfoVolumeDebugInit;
 	};
 
-    class Script {
+	class Script {
 	public:
 		static CommonFunctions* GetCommonFunctions();
 
@@ -336,5 +336,5 @@ namespace zeus {
 		static char* Scr_GetString(scriptInstance_t inst, unsigned int index);
 
 		static void GScr_AddDebugCommand(scriptInstance_t inst);
-    };
+	};
 }

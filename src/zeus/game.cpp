@@ -3,20 +3,20 @@
 #include "game.hpp"
 
 namespace zeus {
-	char* game::ModuleBase = (char*)GetModuleHandle(NULL);
-	game::tGetXAssetSize game::DB_GetXAssetTypeSize = NULL;
-	XAsset* game::DB_XAssetPool = NULL;
+	char* Game::ModuleBase = (char*)GetModuleHandle(NULL);
+	Game::tGetXAssetSize Game::DB_GetXAssetTypeSize = NULL;
+	XAsset* Game::DB_XAssetPool = NULL;
 
-	XAsset* game::GetXAssetPool(int index)
+	XAsset* Game::GetXAssetPool(int index)
 	{
-		if (!game::DB_XAssetPool)
+		if (!Game::DB_XAssetPool)
 		{
-			game::DB_XAssetPool = reinterpret_cast<XAsset*>(PTR_GET_XASSET_POOL);
+			Game::DB_XAssetPool = reinterpret_cast<XAsset*>(PTR_GET_XASSET_POOL);
 		}
-		return &game::DB_XAssetPool[index];
+		return &Game::DB_XAssetPool[index];
 	}
 
-	void game::ResizeAssetLimits(int index, int newSize)
+	void Game::ResizeAssetLimits(int index, int newSize)
 	{
 		auto structSize = GetXAssetSize(index);
 		auto assetPool = GetXAssetPool(index);

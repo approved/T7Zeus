@@ -4,12 +4,12 @@
 
 namespace zeus
 {
-	class game
+	class Game
 	{
-#define PTR_WAIT_FOR_SINGLE_OBJECT	(game::ModuleBase + 0x1AAE8D14)
-#define PTR_GET_XASSET_TYPE_SIZE	(game::ModuleBase + 0x013E9DD0)
-#define PTR_GET_XASSET_POOL			(game::ModuleBase + 0x094093F0)
-#define PTR_JMP_XASSET_TYPE_SIZE	(game::ModuleBase + 0x0332A3E0)
+#define PTR_WAIT_FOR_SINGLE_OBJECT	(Game::ModuleBase + 0x1AAE8D14)
+#define PTR_GET_XASSET_TYPE_SIZE	(Game::ModuleBase + 0x013E9DD0)
+#define PTR_GET_XASSET_POOL			(Game::ModuleBase + 0x094093F0)
+#define PTR_JMP_XASSET_TYPE_SIZE	(Game::ModuleBase + 0x0332A3E0)
 
 	public:
 		static char* ModuleBase;

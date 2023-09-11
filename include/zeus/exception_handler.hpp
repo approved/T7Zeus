@@ -7,8 +7,8 @@ namespace zeus {
     static ZwContinue_t ZwContinue = reinterpret_cast<ZwContinue_t>(GetProcAddress(GetModuleHandleA("ntdll.dll"), "ZwContinue"));
 
     class ExceptionHandler {
-#define EXCP_HEAT_PERCENT (game::ModuleBase + 0x129A2C7)
-#define EXCP_HEAT_RESUME  (game::ModuleBase + 0x129A2F2)
+#define EXCP_HEAT_PERCENT (Game::ModuleBase + 0x129A2C7)
+#define EXCP_HEAT_RESUME  (Game::ModuleBase + 0x129A2F2)
     public:
         static void InstallExceptionDispatcher();
     private:
