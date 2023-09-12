@@ -12,12 +12,12 @@ namespace zeus {
 			g_zoneNames = reinterpret_cast<XZoneName*>(G_ZONENAMES);
 		}
 
-		for (int i = 0; i < g_zoneCount; i++) {
+		for (int i = 0; i < g_zoneCount + 1; i++) {
 			if (g_zoneNames[i].state != XZONE_COMPLETE) continue;
 			XZoneName zone = g_zoneNames[i];
 			std::string name(zone.name);
 			if (zonename == name) {
-				DB_UnloadXZone(i, createDefault, false);
+				DB_UnloadXZone(i - 1, createDefault, false);
 				return;
 			}
 		}
