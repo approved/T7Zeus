@@ -1,11 +1,7 @@
 #pragma once
 
-#include "game.hpp"
-
-
 namespace zeus {
-	enum class LocalClientNum_t : int
-	{
+	enum class LocalClientNum_t : int {
 		INVALID_LOCAL_CLIENT = -1,
 		LOCAL_CLIENT_0 = 0x0,
 		LOCAL_CLIENT_FIRST = 0x0,
@@ -16,16 +12,14 @@ namespace zeus {
 		LOCAL_CLIENT_COUNT = 0x4,
 	};
 
-	enum class scriptInstance_t : int
-	{
+	enum class scriptInstance_t : int {
 		SCRIPTINSTANCE_SERVER = 0x0,
 		SCRIPTINSTANCE_CLIENT = 0x1,
 		SCRIPT_INSTANCE_MAX = 0x2,
 	};
 
 	typedef unsigned int ScrVarCanonicalName_t;
-	struct BuiltinFunctionDef
-	{
+	struct BuiltinFunctionDef {
 		ScrVarCanonicalName_t canonId;
 		unsigned int min_args;
 		unsigned int max_args;
@@ -33,8 +27,7 @@ namespace zeus {
 		int type;
 	};
 
-	struct CommonFunctions
-	{
+	struct CommonFunctions {
 		BuiltinFunctionDef
 			ReportStubUsage,
 			Record3DText,

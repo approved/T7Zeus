@@ -1,6 +1,7 @@
 #include "stdafx.hpp"
 
 #include "script.hpp"
+#include "game.hpp"
 
 namespace zeus {
 	CommonFunctions* Script::GetCommonFunctions() {

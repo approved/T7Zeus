@@ -10,13 +10,11 @@ namespace zeus {
 		void* entries;
 	};
 
-	struct LinkedListEntry
-	{
+	struct LinkedListEntry {
 		LinkedListEntry* next;
 	};
 
-	enum XAssetType
-	{
+	enum XAssetType {
 		None = -1,
 		PhysPreset,
 		PhysContraints,
