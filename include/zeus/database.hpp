@@ -40,7 +40,7 @@ namespace zeus {
 #define G_ZONES		(Game::ModuleBase + 0x99913E4)
 
 	public:
-		static void UnloadZone(std::string zonename);
+		static void UnloadZone(std::string zonename, bool createDefault);
 		static const int g_zoneCount{ 64 };
 		static XZone* g_zones;
 		static XZoneName* g_zoneNames;

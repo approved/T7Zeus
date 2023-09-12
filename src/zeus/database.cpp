@@ -6,7 +6,7 @@ namespace zeus {
 	XZone* Database::g_zones{};
 	XZoneName* Database::g_zoneNames{};
 
-	void Database::UnloadZone(std::string zonename) {
+	void Database::UnloadZone(std::string zonename, bool createDefault) {
 		if (!g_zones) {
 			g_zones = reinterpret_cast<XZone*>(G_ZONES);
 			g_zoneNames = reinterpret_cast<XZoneName*>(G_ZONENAMES);
@@ -17,8 +17,7 @@ namespace zeus {
 			XZoneName zone = g_zoneNames[i];
 			std::string name(zone.name);
 			if (zonename == name) {
-				std::cout << name << std::endl;
-				DB_UnloadXZone(i, 0, false);
+				DB_UnloadXZone(i, createDefault, false);
 				return;
 			}
 		}
