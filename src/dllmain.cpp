@@ -5,7 +5,7 @@
 #include "zeus/exception_handler.hpp"
 #include "zeus/script.hpp"
 
-#define DEBUG_CONSOLE false
+#define DEBUG_CONSOLE true
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fwdReason, LPVOID lpReserved)
 {
@@ -16,7 +16,7 @@ int init(void* L)
 {
 	if (DEBUG_CONSOLE && AllocConsole()) {
 
-		SetConsoleTitleA("T6 Zeus: Console");
+		SetConsoleTitleA("T7 Zeus: Console");
 		FILE* fDummy;
 		freopen_s(&fDummy, "CONIN$", "r", stdin);
 		freopen_s(&fDummy, "CONOUT$", "w", stderr);
