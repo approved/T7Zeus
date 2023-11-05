@@ -6,7 +6,7 @@ namespace zeus
 {
 	class Game
 	{
-#define PTR_GET_XASSET_POOL (Game::ModuleBase + 0x094093F0)
+#define PTR_GET_XASSET_POOL (Game::ModuleBase + 0x094073F0)
 
 	public:
 		static char* ModuleBase;

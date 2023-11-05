@@ -228,6 +228,11 @@ namespace zeus {
 		auto structSize = GetXAssetSize(index);
 		auto assetPool = GetXAssetPool(index);
 
+		if (!assetPool) {
+			std::cout << "Could not find assetpool!\n";
+			return;
+		}
+
 		if (structSize != -1 && assetPool != 0 && assetPool->maximum < newSize)
 		{
 			auto newBlock = (LinkedListEntry*)calloc(static_cast<size_t>(newSize) - assetPool->maximum, structSize);
