@@ -34,7 +34,19 @@ zeus.set_paralyzer_patch_enabled = function()
     Engine.SetDvar("paralyzer_patch_enabled", 1)
 end
 
+zeus.InterpretDllPath = function(options)
+    local dllPath = [[..\..\workshop\content\311210\]] .. options.workshopid .. "\\"
 
-return {
-    zeus = zeus,
-}
+    if options.mapname and Engine.GetCurrentMap() == options.mapname or
+        options.modname and Engine.UsingModsUgcName() == options.modname then
+        dllPath = options.dllpath
+    end
+
+    if forcepath or Engine.IsBOIII == true then
+        dllPath = options.dllpath
+    end
+
+    return (dllPath .. options.dllname)
+end
+
+return zeus
