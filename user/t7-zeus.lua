@@ -34,10 +34,7 @@ zeus.set_paralyzer_patch_enabled = function()
     Engine.SetDvar("paralyzer_patch_enabled", 1)
 end
 
-local GetZeus = function()
-    return zeus
-end
 
 return {
-    GetZeus = GetZeus,
+    zeus = zeus,
 }
