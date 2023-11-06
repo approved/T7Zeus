@@ -1,4 +1,3 @@
-EnableGlobals()
 local package = require("package")
 
 local zeus = {}
@@ -6,28 +5,39 @@ zeus.dll_name = "t7-zeus.dll"
 zeus.dll_path = ("./" .. zeus.dll_name)
 
 zeus.init = function()
+    if Engine.DvarInt(nil, "zeus_initialized") == 1 then
+        return
+    end
+
     local init = package.loadlib(zeus.dll_path, "init")
     if not init then
         Engine.ComError(Enum.errorCode.ERROR_UI, "Failed to find " .. zeus.dll_name)
         return
     end
 
-    zeus.init = init
-    zeus.init()
+    init()
+    Engine.SetDvar("zeus_initialized", 1)
 end
 
 zeus.set_paralyzer_patch_enabled = function()
-    local set_paralyzer_patch_enabled = package.loadlib(zeus.dll_path, "SetParalyzerPatchEnabled")
-    
-    if not set_paralyzer_patch_enabled then
+    if Engine.DvarInt(nil, "paralyzer_patch_enabled") == 1 then
+        return
+    end
+
+    local init = package.loadlib(zeus.dll_path, "SetParalyzerPatchEnabled")
+    if not init then
         Engine.ComError(Enum.errorCode.ERROR_UI, "SetParalyzerPatchEnabled: Failure")
         return
     end
 
-    zeus.set_paralyzer_patch_enabled = set_paralyzer_patch_enabled
-    zeus.set_paralyzer_patch_enabled()
+    init()
+    Engine.SetDvar("paralyzer_patch_enabled", 1)
 end
 
-GetZeus = function()
+local GetZeus = function()
     return zeus
 end
+
+return {
+    GetZeus = GetZeus,
+}
