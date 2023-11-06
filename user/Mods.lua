@@ -1,8 +1,6 @@
--- LuiLoad this file from CSC at the earliest point you want to load it
-EnableGlobals()
-require("t7-zeus")
+local t7zeus = require("t7-zeus")
 
-local zeus = GetZeus()
+local zeus = t7zeus.zeus
 if not zeus then
     Engine.ComError(Enum.errorCode.ERROR_UI, "Could not get Zeus instance")
     return
