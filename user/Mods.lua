@@ -1,4 +1,5 @@
-local zeus = require("t7-zeus")
+local zeus = require("zeus-utils")
+
 if not zeus then
     Engine.ComError(Enum.errorCode.ERROR_UI, "Could not get Zeus instance")
     return

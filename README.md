@@ -16,6 +16,6 @@ An Engine mod for T7 (Call of Duty: Black Ops 3)
 ```lua
 // Lua
 rawfile,Mods.lua
-rawfile,t7-zeus.lua
+rawfile,zeus-utils.lua
 ```
 * Finally, link the mod/map
