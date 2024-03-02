@@ -5,7 +5,7 @@
 #include "zeus/exception_handler.hpp"
 #include "zeus/script.hpp"
 
-#define DEBUG_CONSOLE true
+#define DEBUG_CONSOLE false
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fwdReason, LPVOID lpReserved)
 {
