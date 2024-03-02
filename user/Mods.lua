@@ -1,13 +1,23 @@
-local t7zeus = require("t7-zeus")
+local zeus = require("zeus-utils")
 
-local zeus = t7zeus.zeus
 if not zeus then
     Engine.ComError(Enum.errorCode.ERROR_UI, "Could not get Zeus instance")
     return
 end
 
-local relative_path = "./"
-zeus.dll_path = (relative_path .. zeus.dll_name)
+-- locate dll file
+local modinfo = {
+    modname = "t7zeus",
+    mapname = "",
+    workshopid = "",
+    dllname = "t7-zeus.dll",
+    dllpath = [[.\mods\t7zeus\zone\]], -- Path to dll. Only used for maps/mods installed in game directory.
+    forcepath = false,
+}
+
+zeus.dll_path = zeus.InterpretDllPath(modinfo)
+
+-- initialize
 zeus.init()
 
 -- Enable the paralyzer patch
